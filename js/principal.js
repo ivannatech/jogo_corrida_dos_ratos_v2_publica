@@ -761,7 +761,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const pixDonationLink = document.getElementById('pixDonationLink');
-    const yourPixKey = "SUA_CHAVE_PIX_AQUI"; // <-- Substitua pela sua chave Pix real
+    const yourPixKey = "ivannatech@gmail.com"; // <-- Substitua pela sua chave Pix real
 
     if (pixDonationLink) {
         pixDonationLink.addEventListener('click', (event) => {
@@ -770,3 +770,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+const pixDonationLink = document.getElementById('pixDonationLink');
+    const pixModal = document.getElementById('pixModal');
+    const closeButton = document.querySelector('.close-button');
+    const displayedPixKey = document.getElementById('displayedPixKey');
+    const copyPixKeyButton = document.getElementById('copyPixKey');
+
+    const yourPixKey = "ivannatech@gmail.com"; // <-- Substitua pela sua chave Pix real
+
+    if (pixDonationLink) {
+        pixDonationLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            displayedPixKey.textContent = yourPixKey; // Garante que a chave correta seja exibida
+            pixModal.style.display = 'flex'; // Exibe o modal
+        });
+    }
+
+    if (closeButton) {
+        closeButton.addEventListener('click', () => {
+            pixModal.style.display = 'none'; // Esconde o modal ao clicar no 'x'
+        });
+    }
+
+    // Fecha o modal se clicar fora do conteúdo do modal
+    window.addEventListener('click', (event) => {
+        if (event.target === pixModal) {
+            pixModal.style.display = 'none';
+        }
+    });
+
+    if (copyPixKeyButton) {
+        copyPixKeyButton.addEventListener('click', () => {
+            navigator.clipboard.writeText(yourPixKey)
+                .then(() => {
+                    alert('Chave Pix copiada para a área de transferência!');
+                })
+                .catch(err => {
+                    console.error('Erro ao copiar a chave Pix:', err);
+                    alert('Não foi possível copiar a chave Pix automaticamente. Por favor, copie manualmente: ' + yourPixKey);
+                });
+        });
+    }

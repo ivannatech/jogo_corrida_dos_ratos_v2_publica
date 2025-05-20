@@ -156,99 +156,202 @@ footer {
 
 /* Estilos para a seção de escolhas de eventos */
 #eventChoices {
-    margin-top: 15px;
-    display: flex; /* Para organizar os botões lado a lado ou em coluna */
-    flex-direction: column; /* Começa em coluna, mas pode ser row para botões menores */
-    gap: 10px; /* Espaçamento entre os botões */
-    align-items: center; /* Centraliza os botões */
+  margin-top: 15px;
+  display: flex; /* Para organizar os botões lado a lado ou em coluna */
+  flex-direction: column; /* Começa em coluna, mas pode ser row para botões menores */
+  gap: 10px; /* Espaçamento entre os botões */
+  align-items: center; /* Centraliza os botões */
 }
 
 .event-choice-button {
-    background-color: #4CAF50; /* Verde */
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    width: 80%; /* Para os botões não ficarem muito grandes */
-    max-width: 400px;
-    transition: background-color 0.3s ease;
+  background-color: #4caf50; /* Verde */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 80%; /* Para os botões não ficarem muito grandes */
+  max-width: 400px;
+  transition: background-color 0.3s ease;
 }
 
 .event-choice-button:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 .event-choice-button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-    color: #666666;
+  background-color: #cccccc;
+  cursor: not-allowed;
+  color: #666666;
 }
 
 /* Ajustes para as mensagens de eventos existentes */
 #opportunityLog {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 5px;
-    min-height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-style: italic;
-    color: #555;
-    margin-bottom: 10px; /* Adiciona um espaço entre o log e os botões */
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 10px; /* Adiciona um espaço entre o log e os botões */
 }
 
 #opportunityLog p {
-    margin: 0;
-    padding: 5px;
-    font-weight: bold;
+  margin: 0;
+  padding: 5px;
+  font-weight: bold;
 }
 
 .event-positive {
-    color: green;
-    background-color: #e6ffe6;
-    border: 1px solid #ccebcc;
-    padding: 8px;
-    border-radius: 4px;
+  color: green;
+  background-color: #e6ffe6;
+  border: 1px solid #ccebcc;
+  padding: 8px;
+  border-radius: 4px;
 }
 
 .event-negative {
-    color: red;
-    background-color: #ffe6e6;
-    border: 1px solid #ebcccc;
-    padding: 8px;
-    border-radius: 4px;
+  color: red;
+  background-color: #ffe6e6;
+  border: 1px solid #ebcccc;
+  padding: 8px;
+  border-radius: 4px;
 }
 
-.event-neutral { /* Novo estilo para mensagens neutras */
-    color: #333;
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
-    padding: 8px;
-    border-radius: 4px;
+.event-neutral {
+  /* Novo estilo para mensagens neutras */
+  color: #333;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 4px;
 }
 
 .sell-asset-button {
-    background-color: #f44336; /* Vermelho para vender */
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    transition: background-color 0.3s ease;
+  background-color: #f44336; /* Vermelho para vender */
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.3s ease;
 }
 
 .sell-asset-button:hover {
-    background-color: #da190b;
+  background-color: #da190b;
 }
 
 .sell-asset-button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-    color: #666666;
+  background-color: #cccccc;
+  cursor: not-allowed;
+  color: #666666;
+}
+
+/* Estilos para o Modal Pix */
+.modal {
+  display: none; /* Escondido por padrão */
+  position: fixed; /* Fica por cima de tudo */
+  z-index: 1; /* Nível de sobreposição */
+  left: 0;
+  top: 0;
+  width: 100%; /* Largura total */
+  height: 100%; /* Altura total */
+  overflow: auto; /* Habilita scroll se necessário */
+  background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente */
+  display: flex; /* Para centralizar o conteúdo */
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto; /* Centraliza o modal */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Largura do conteúdo do modal */
+  max-width: 500px; /* Largura máxima */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Animação para o modal */
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.close-button {
+  color: #f44336;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #da190b;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pix-key-display {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 15px 0;
+  padding: 10px;
+  background-color: #eee;
+  border-radius: 4px;
+  word-break: break-all; /* Quebra a chave Pix se for muito longa */
+}
+
+#copyPixKey {
+  background-color: #4caf50; /* Verde */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+#copyPixKey:hover {
+  background-color: #45a049;
+}
+
+.small-text {
+  font-size: 0.9em;
+  color: #45a049;
+  margin-top: 20px;
+}
+
+/* Estilo para o link do cafezinho */
+#pixDonationLink {
+  color: inherit; /* Herda a cor do texto pai */
+  text-decoration: none; /* Remove o sublinhado */
+  cursor: pointer; /* Garante que o cursor mude para indicar que é clicável */
+  text-decoration: underline;
+  color: #f9a825;
+}
+
+#pixDonationLink:hover {
+  color: #e69138;
 }

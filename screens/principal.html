@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corrida dos Ratos - O Jogo</title>
+    <link rel="stylesheet" href="../css/principal.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Corrida dos Ratos</h1>
+        <div id="playerInfo">
+          <p><strong>Jogador:</strong> <span id="playerName"></span></p>
+          <p><strong>Emprego:</strong> <span id="playerJob"></span></p>
+        </div>
+      </header>
+
+      <main>
+        <section id="finances">
+          <h2>Finanças</h2>
+          <p>
+            <strong>Salário Mensal:</strong> R$ <span id="monthlySalary"></span>
+          </p>
+          <p>
+            <strong>Despesas Mensais:</strong> R$
+            <span id="monthlyExpenses"></span>
+          </p>
+          <p><strong>Saldo:</strong> R$ <span id="currentBalance"></span></p>
+        </section>
+
+        <section id="assetsAndLiabilities">
+          <h2>Ativos e Passivos</h2>
+          <div id="assets">
+            <h3>Ativos</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Tipo</th>
+                  <th>Valor Total</th>
+                  <th>Renda Mensal</th>
+                  <th>Despesas Mensais</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="assetList"></tbody>
+            </table>
+          </div>
+          <div id="liabilities">
+            <h3>Passivos</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Tipo</th>
+                  <th>Montante Original</th>
+                  <th>Pagamento Mensal</th>
+                  <th>Restante a Pagar</th>
+                </tr>
+              </thead>
+              <tbody id="liabilityList"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="actions">
+          <h2>Ações</h2>
+          <button id="nextMonthButton">Avançar Mês</button>
+          <button id="investButton">Investimentos</button>
+          <button id="marketButton">Mercado</button>
+
+          <div id="opportunities">
+            <h3>Oportunidades e Eventos</h3>
+            <div id="opportunityLog">
+              <p>
+                Bem-vindo à Corrida dos Ratos! Comece a avançar os meses para
+                ver o que o futuro te reserva.
+              </p>
+            </div>
+            <div id="eventChoices" style="display: none"></div>
+          </div>
+
+          <div id="exitCondition">
+            <h3>Sair da Corrida dos Ratos</h3>
+            <p>Renda Passiva Mensal: R$ <span id="passiveIncome">0.00</span></p>
+            <p>
+              Despesas Totais Mensais: R$ <span id="totalExpenses">0.00</span>
+            </p>
+            <p id="exitStatus">
+              Continue trabalhando para aumentar sua renda passiva!
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 - Corrida dos Ratos</p>
+        <p>
+          Se você gostou desse jogo, considere me comprar um
+          <a href="#" id="pixDonationLink">cafezinho</a>!
+        </p>
+      </footer>
+    </div>
+
+    <script src="../js/principal.js"></script>
+  </body>
+</html>

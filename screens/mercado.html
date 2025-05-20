@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corrida dos Ratos - Mercado</title>
+    <link rel="stylesheet" href="../css/mercado.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Mercado de Ativos e Passivos</h1>
+
+      <section id="marketOptions">
+        <h2>Comprar Ativos</h2>
+        <div id="availableAssets"></div>
+
+        <hr />
+
+        <h2>Seus Ativos para Venda</h2>
+        <div id="playerAssetsForSale">
+          <p id="noAssetsMessage" style="text-align: center; color: #777">
+            Você ainda não possui ativos vendáveis.
+          </p>
+        </div>
+
+        <hr />
+
+        <h2>Contrair Passivos</h2>
+        <div id="availableLiabilitiesToContract"></div>
+
+        <hr />
+
+        <h2>Seus Passivos para Quitar</h2>
+        <div id="playerLiabilitiesToPayOff">
+          <p id="noLiabilitiesMessage" style="text-align: center; color: #777">
+            Você ainda não possui passivos.
+          </p>
+        </div>
+      </section>
+
+      <button id="backToMainButton">Voltar para a Tela Principal</button>
+    </div>
+
+    <script src="../js/mercado.js"></script>
+  </body>
+</html>

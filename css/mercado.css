@@ -1,0 +1,160 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+}
+
+h1,
+h2 {
+  color: #333;
+}
+
+#marketOptions {
+  margin-top: 20px;
+  text-align: left;
+}
+
+#availableAssets,
+#availableLiabilities {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.asset-item,
+.liability-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px dashed #eee;
+}
+
+.asset-item:last-child,
+.liability-item:last-child {
+  border-bottom: none;
+}
+
+.asset-info h3,
+.liability-info h3 {
+  margin: 0 0 5px 0;
+  color: #555;
+}
+
+.asset-info p,
+.liability-info p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #777;
+}
+
+.buy-button,
+.contract-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button:hover,
+.contract-button:hover {
+  background-color: #218838;
+}
+
+#backToMainButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+#backToMainButton:hover {
+  background-color: #0056b3;
+}
+
+.asset-item,
+.liability-item {
+  /* Adicionado .liability-item aqui */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px dashed #eee;
+}
+
+/* ... (continua com os estilos existentes) ... */
+
+.buy-button,
+.contract-button {
+  /* Adicionado .contract-button aqui */
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button:hover,
+.contract-button:hover {
+  background-color: #218838;
+}
+
+.sell-button {
+  /* Já deve existir, mas adicionado para contexto */
+  background-color: #dc3545; /* Vermelho para venda */
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.sell-button:hover {
+  background-color: #c82333;
+}
+
+.payoff-button {
+  /* NOVO: Estilo para o botão de quitar */
+  background-color: #007bff; /* Azul para quitar */
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.payoff-button:hover {
+  background-color: #0056b3;
+}

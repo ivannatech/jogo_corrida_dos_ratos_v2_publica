@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrida dos Ratos - Cadastro do Jogador</title>
+    <link rel="stylesheet" href="../css/cadastro.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro do Jogador</h1>
+
+        <form id="playerForm">
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Idade:</label>
+                <input type="number" id="age" min="18" required>
+            </div>
+
+            <div class="form-group">
+                <label for="education">Escolaridade:</label>
+                <select id="education" required>
+                    <option value="">Selecione</option>
+                    <option value="fundamental">Fundamental</option>
+                    <option value="medio">Médio</option>
+                    <option value="superior">Superior</option>
+                    <option value="posgraduacao">Pós-graduação</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="maritalStatus">Estado Civil:</label>
+                <select id="maritalStatus" required>
+                    <option value="">Selecione</option>
+                    <option value="solteiro">Solteiro(a)</option>
+                    <option value="casado">Casado(a)</option>
+                    <option value="divorciado">Divorciado(a)</option>
+                    <option value="viuvo">Viúvo(a)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="children">Filhos:</label>
+                <select id="children" required>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3+">3+</option>
+                </select>
+            </div>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+
+    <script src="../js/cadastro.js"></script>
+</body>
+</html>

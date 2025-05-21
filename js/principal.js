@@ -571,7 +571,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const savedPlayerJob = localStorage.getItem("playerJob");
     if (savedPlayerJob) job = JSON.parse(savedPlayerJob);
     else {
-      window.location.href = "../screens/emprego.html";
+      window.location.href = "/screens/emprego.html";
       return;
     }
 
@@ -696,7 +696,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadGameState();
 
   marketButton.addEventListener("click", () => {
-    window.location.href = "../screens/mercado.html";
+    window.location.href = "/screens/mercado.html";
   });
 
   nextMonthButton.addEventListener("click", () => {
@@ -755,7 +755,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   investButton.addEventListener("click", () => {
-    window.location.href = "../screens/investimento.html";
+    window.location.href = "/screens/investimento.html";
   });
 });
 

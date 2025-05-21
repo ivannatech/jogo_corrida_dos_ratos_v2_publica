@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('playerData', JSON.stringify(playerData));
 
             // Redirecionar para a próxima tela do jogo (escolha de emprego)
-            window.location.href = '../screens/emprego.html'; // Próxima tela a ser criada
+            window.location.href = '/screens/emprego.html'; // Próxima tela a ser criada
         } else {
             alert('Por favor, insira o seu nome.');
         }

@@ -40,13 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('playerInvestments', JSON.stringify(investments));
 
             alert('Investimentos realizados!');
-            window.location.href = '../screens/principal.html';
+            window.location.href = '/screens/principal.html';
         } else {
             alert('Insira um valor para investir.');
         }
     });
 
     closeInvestmentsButton.addEventListener('click', () => {
-        window.location.href = '../screens/principal.html';
+        window.location.href = '/screens/principal.html';
     });
 });

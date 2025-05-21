@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (selectedJob) {
             const chosenJob = jobs.find(job => job.id === selectedJob);
             localStorage.setItem('playerJob', JSON.stringify(chosenJob));
-            window.location.href = '../screens/principal.html';
+            window.location.href = '/screens/principal.html';
         } else {
             alert('Por favor, selecione um emprego.');
         }

@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('player2Name', player2Name);
 
             // Redirecionar para a próxima tela do jogo (ainda não criada)
-            window.location.href = '../screens/cadastro.html'; // Você criará o arquivo game.html posteriormente
+            window.location.href = '/screens/cadastro.html'; // Você criará o arquivo game.html posteriormente
         } else {
             alert('Por favor, insira o nome de ambos os jogadores.');
         }

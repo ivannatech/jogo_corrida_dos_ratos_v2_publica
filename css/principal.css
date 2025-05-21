@@ -146,6 +146,10 @@ section h2 {
   color: #eee; /* Cor original */
 }
 
+#finances{
+      grid-column: 1/3;
+}
+
 #finances p {
   margin-bottom: 8px;
   font-size: 1.05em;
@@ -175,6 +179,10 @@ section h2 {
   margin-bottom: 15px;
   text-align: left;
   color: #eee; /* Cor original */
+}
+
+#actions{
+      grid-column: 1/3;
 }
 
 /* Botões de ação */

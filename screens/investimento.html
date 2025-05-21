@@ -1,41 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Corrida dos Ratos - Investimentos</title>
-    <link rel="stylesheet" href="../css/investimento.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Investimentos</h1>
+    <link rel="stylesheet" href="../css/investimento.css" />
 
-        <section id="investmentSection">
-            <div id="investmentOptions">
-                <div class="investment-option" data-investment-type="Poupança">
-                    <h3>Poupança</h3>
-                    <p>Retorno baixo, risco baixo.</p>
-                    <label for="savingsAmount">Valor a investir:</label>
-                    <input type="number" id="savingsAmount" value="0" min="0">
-                </div>
-                <div class="investment-option" data-investment-type="Ações">
-                    <h3>Ações (Simulado)</h3>
-                    <p>Retorno moderado, risco moderado.</p>
-                    <label for="stocksAmount">Valor a investir:</label>
-                    <input type="number" id="stocksAmount" value="0" min="0">
-                </div>
-                <div class="investment-option" data-investment-type="Imóveis">
-                    <h3>Imóveis (Simulado)</h3>
-                    <p>Potencial de alto retorno a longo prazo.</p>
-                    <label for="realEstateAmount">Valor a investir:</label>
-                    <input type="number" id="realEstateAmount" value="0" min="0">
-                </div>
-            </div>
-            <button id="confirmInvestmentsButton">Confirmar Investimentos</button>
-            <button id="closeInvestmentsButton">Voltar</button>
-        </section>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5NDSYFMED4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-5NDSYFMED4");
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Investimentos</h1>
+
+      <section id="investmentSection">
+        <div id="investmentOptions">
+          <div class="investment-option" data-investment-type="Poupança">
+            <h3>Poupança</h3>
+            <p>Retorno baixo, risco baixo.</p>
+            <label for="savingsAmount">Valor a investir:</label>
+            <input type="number" id="savingsAmount" value="0" min="0" />
+          </div>
+          <div class="investment-option" data-investment-type="Ações">
+            <h3>Ações (Simulado)</h3>
+            <p>Retorno moderado, risco moderado.</p>
+            <label for="stocksAmount">Valor a investir:</label>
+            <input type="number" id="stocksAmount" value="0" min="0" />
+          </div>
+          <div class="investment-option" data-investment-type="Imóveis">
+            <h3>Imóveis (Simulado)</h3>
+            <p>Potencial de alto retorno a longo prazo.</p>
+            <label for="realEstateAmount">Valor a investir:</label>
+            <input type="number" id="realEstateAmount" value="0" min="0" />
+          </div>
+        </div>
+        <button id="confirmInvestmentsButton">Confirmar Investimentos</button>
+        <button id="closeInvestmentsButton">Voltar</button>
+      </section>
     </div>
 
     <script src="../js/investimento.js"></script>
-</body>
+  </body>
 </html>

@@ -343,18 +343,7 @@ footer {
   margin-top: 20px;
 }
 
-/* Estilo para o link do cafezinho */
-#pixDonationLink {
-  color: inherit; /* Herda a cor do texto pai */
-  text-decoration: none; /* Remove o sublinhado */
-  cursor: pointer; /* Garante que o cursor mude para indicar que é clicável */
-  text-decoration: underline;
-  color: #f9a825;
-}
 
-#pixDonationLink:hover {
-  color: #e69138;
-}
 
 ---
 /* Estilos para o Botão Flutuante Pix */

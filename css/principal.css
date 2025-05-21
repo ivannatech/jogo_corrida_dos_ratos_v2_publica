@@ -265,7 +265,7 @@ footer {
   height: 100%; /* Altura total */
   overflow: auto; /* Habilita scroll se necessário */
   background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente */
-  display: flex; /* Para centralizar o conteúdo */
+  display: none; 
   justify-content: center;
   align-items: center;
   color: #333;

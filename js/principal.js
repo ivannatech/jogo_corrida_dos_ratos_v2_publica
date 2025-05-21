@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // --- Declaração das variáveis do jogo (manter como está) ---
   const playerNameElement = document.getElementById("playerName");
   const playerJobElement = document.getElementById("playerJob");
   const monthlySalaryElement = document.getElementById("monthlySalary");
@@ -9,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const assetListBody = document.getElementById("assetList");
   const liabilityListBody = document.getElementById("liabilityList");
   const passiveIncomeElement = document.getElementById("passiveIncome");
-  const totalExpensesElement = document.getElementById("totalExpenses");
+  const totalExpensesElement = document.getElementById("totalExpenses"); // CORRIGIDO: Certifique-se que está assim
   const exitStatusElement = document.getElementById("exitStatus");
   const marketButton = document.getElementById("marketButton");
   const opportunityLog = document.getElementById("opportunityLog");
@@ -24,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let choiceEventActive = false; // Variável para controlar eventos com escolha
 
-  // --- Definição dos Eventos do Jogo ---
+  // --- Definição dos Eventos do Jogo (manter como está) ---
   const gameEvents = [
     {
       id: "bonus-salario",
@@ -111,8 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
       appliesTo: "balance",
       hasChoices: false,
     },
-
-    // --- NOVOS EVENTOS COM ESCOLHAS ---
     {
       id: "oferta-negocio",
       type: "neutral",
@@ -372,29 +371,25 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
-  // --- Funções para atualizar a interface ---
+  // --- Funções para atualizar a interface (manter como está) ---
 
-  // Função única para exibir TODOS os ativos (investimentos + outros ativos)
   function updateAllAssetsDisplay() {
     assetListBody.innerHTML = "";
 
-    // Exibir investimentos da tela de investimento
     investments.forEach((investment) => {
       if (investment.amount > 0) {
-        // Só mostra se tiver valor
         const row = document.createElement("tr");
         row.innerHTML = `
-                    <td>${investment.type} (Investimento)</td>
-                    <td>Investimento</td>
-                    <td>R$ ${parseFloat(investment.amount).toFixed(2)}</td>
-                    <td>R$ 0.00</td>
-                    <td>R$ 0.00</td>
-                    <td></td> `;
+                        <td>${investment.type} (Investimento)</td>
+                        <td>Investimento</td>
+                        <td>R$ ${parseFloat(investment.amount).toFixed(2)}</td>
+                        <td>R$ 0.00</td>
+                        <td>R$ 0.00</td>
+                        <td></td> `;
         assetListBody.appendChild(row);
       }
     });
 
-    // Exibir outros ativos (comprados no mercado ou por eventos)
     assets.forEach((asset) => {
       const row = document.createElement("tr");
       const assetNameDisplay =
@@ -403,25 +398,26 @@ document.addEventListener("DOMContentLoaded", () => {
           : asset.name;
 
       row.innerHTML = `
-                <td>${assetNameDisplay}</td>
-                <td>${asset.type}</td>
-                <td>R$ ${parseFloat(asset.value).toFixed(2)}</td>
-                <td>R$ ${
-                  asset.income ? parseFloat(asset.income).toFixed(2) : "0.00"
-                }</td>
-                <td>R$ ${
-                  asset.expenses
-                    ? parseFloat(asset.expenses).toFixed(2)
-                    : "0.00"
-                }</td>
-                <td><button class="sell-asset-button" data-asset-id="${
-                  asset.id
-                }">Vender</button></td>
-            `;
+                        <td>${assetNameDisplay}</td>
+                        <td>${asset.type}</td>
+                        <td>R$ ${parseFloat(asset.value).toFixed(2)}</td>
+                        <td>R$ ${
+                          asset.income
+                            ? parseFloat(asset.income).toFixed(2)
+                            : "0.00"
+                        }</td>
+                        <td>R$ ${
+                          asset.expenses
+                            ? parseFloat(asset.expenses).toFixed(2)
+                            : "0.00"
+                        }</td>
+                        <td><button class="sell-asset-button" data-asset-id="${
+                          asset.id
+                        }">Vender</button></td>
+                    `;
       assetListBody.appendChild(row);
     });
 
-    // Adicionar event listeners aos botões de venda
     document.querySelectorAll(".sell-asset-button").forEach((button) => {
       button.addEventListener("click", (event) => {
         const assetIdToSell = event.target.dataset.assetId;
@@ -435,18 +431,20 @@ document.addEventListener("DOMContentLoaded", () => {
     liabilities.forEach((liability) => {
       const row = document.createElement("tr");
       row.innerHTML = `
-                <td>${liability.name}</td>
-                <td>${liability.type}</td>
-                <td>R$ ${parseFloat(liability.amount).toFixed(2)}</td>
-                <td>R$ ${parseFloat(liability.monthlyPayment).toFixed(2)}</td>
-                <td>R$ ${parseFloat(liability.currentAmountDue).toFixed(
-                  2
-                )}</td> `;
+                        <td>${liability.name}</td>
+                        <td>${liability.type}</td>
+                        <td>R$ ${parseFloat(liability.amount).toFixed(2)}</td>
+                        <td>R$ ${parseFloat(liability.monthlyPayment).toFixed(
+                          2
+                        )}</td>
+                        <td>R$ ${parseFloat(liability.currentAmountDue).toFixed(
+                          2
+                        )}</td> `;
       liabilityListBody.appendChild(row);
     });
   }
 
-  // --- Funções de Cálculo ---
+  // --- Funções de Cálculo (manter como está) ---
 
   function calculateTotalExpenses() {
     let total = job ? parseFloat(job.expenses) : 0;
@@ -507,28 +505,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // --- NOVO: Função para Vender Ativo ---
+  // --- NOVO: Função para Vender Ativo (manter como está) ---
   function sellAsset(assetId) {
     const assetIndex = assets.findIndex((asset) => asset.id === assetId);
 
     if (assetIndex !== -1) {
       const assetToSell = assets[assetIndex];
 
-      // Simular uma pequena variação no preço de venda (ex: 90% a 110% do valor atual)
-      const saleMultiplier = Math.random() * 0.2 + 0.9; // Entre 0.9 e 1.1
+      const saleMultiplier = Math.random() * 0.2 + 0.9;
       const saleValue = assetToSell.value * saleMultiplier;
-
-      // Opcional: Adicionar uma taxa de venda (ex: 5%)
       const saleFee = saleValue * 0.05;
       const netSaleValue = saleValue - saleFee;
 
-      currentBalance += netSaleValue; // Adiciona o valor líquido da venda ao saldo
+      currentBalance += netSaleValue;
 
-      assets.splice(assetIndex, 1); // Remove o ativo da lista
+      assets.splice(assetIndex, 1);
 
-      opportunityLog.innerHTML = ""; // Limpa o log
+      opportunityLog.innerHTML = "";
       const sellMessage = document.createElement("p");
-      sellMessage.classList.add("event-positive"); // Mensagem positiva
+      sellMessage.classList.add("event-positive");
       sellMessage.textContent = `Você vendeu seu(sua) ${
         assetToSell.name
       } por R$ ${netSaleValue.toFixed(
@@ -538,9 +533,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       saveGameState();
       updateAllAssetsDisplay();
-      updateMonthlyExpensesDisplay(); // Pode mudar as despesas se o ativo tinha
-      checkExitCondition(); // Pode mudar a renda passiva
-      currentBalanceElement.textContent = currentBalance.toFixed(2); // Atualiza o saldo na UI
+      updateMonthlyExpensesDisplay();
+      checkExitCondition();
+      currentBalanceElement.textContent = currentBalance.toFixed(2);
       console.log(
         `Ativo vendido: ${
           assetToSell.name
@@ -553,7 +548,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // --- Funções de Salvar/Carregar Estado do Jogo ---
+  // --- Funções de Salvar/Carregar Estado do Jogo (manter como está) ---
 
   function saveGameState() {
     localStorage.setItem("playerData", JSON.stringify(player));
@@ -571,6 +566,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const savedPlayerJob = localStorage.getItem("playerJob");
     if (savedPlayerJob) job = JSON.parse(savedPlayerJob);
     else {
+      // Importante: certifique-se que o caminho está correto para o GitHub Pages
       window.location.href = "/jogo_corrida_dos_ratos_v2_publica/screens/emprego.html";
       return;
     }
@@ -696,6 +692,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadGameState();
 
   marketButton.addEventListener("click", () => {
+    // Importante: ajuste o caminho para o GitHub Pages se necessário
     window.location.href = "/jogo_corrida_dos_ratos_v2_publica/screens/mercado.html";
   });
 
@@ -755,78 +752,93 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   investButton.addEventListener("click", () => {
+    // Importante: ajuste o caminho para o GitHub Pages se necessário
     window.location.href = "/jogo_corrida_dos_ratos_v2_publica/screens/investimento.html";
   });
-});
 
-document.addEventListener("DOMContentLoaded", () => {
+  // --- INÍCIO DA LÓGICA DO MODAL PIX - AGORA DENTRO DO DOMContentLoaded PRINCIPAL ---
   const pixDonationLink = document.getElementById("pixDonationLink");
+  const pixModal = document.getElementById("pixModal");
+  const closeButton = document.querySelector(".close-button");
+  const displayedPixKey = document.getElementById("displayedPixKey");
+  const copyPixKeyButton = document.getElementById("copyPixKey");
+  const floatingPixButton = document.getElementById("floatingPixButton");
+
   const yourPixKey = "ivannatech@gmail.com"; // <-- Substitua pela sua chave Pix real
 
+  // NOVIDADE: Lógica para exibir o modal Pix na primeira vez que a tela principal é carregada
+  const hasSeenPixModal = localStorage.getItem("hasSeenPixModal");
+  console.log(
+    "principal.js: Valor de hasSeenPixModal ao carregar (fora da condição):",
+    hasSeenPixModal
+  );
+
+  if (hasSeenPixModal !== "true") {
+    // <--- AQUI!
+    console.log(
+      "principal.js: hasSeenPixModal NÃO é 'true', exibindo modal automaticamente."
+    );
+    pixModal.style.display = "flex";
+    localStorage.setItem("hasSeenPixModal", "true"); // <--- AQUI ELE SETA PRA TRUE
+  } else {
+    console.log(
+      "principal.js: Modal Pix já foi visto ('true'), NÃO exibindo automaticamente."
+    );
+  }
+
+  // Evento para o link "cafezinho" no footer (funciona sempre)
   if (pixDonationLink) {
     pixDonationLink.addEventListener("click", (event) => {
-      event.preventDefault(); // Impede o link de navegar para outra página
-      alert(
-        `Fico feliz que tenha gostado e queira me ajudar! \n\n Minha chave Pix é: ivannatech@gmail.com\n\nCopie e cole para fazer a doação.`
-      );
+      event.preventDefault();
+      console.log("Clicou no link do cafezinho.");
+      displayedPixKey.textContent = yourPixKey;
+      pixModal.style.display = "flex"; // Exibe o modal
+      // NENHUM localStorage.setItem("hasSeenPixModal", "true") AQUI. Isso é bom.
     });
   }
-});
 
-const pixDonationLink = document.getElementById("pixDonationLink");
-const pixModal = document.getElementById("pixModal");
-const closeButton = document.querySelector(".close-button");
-const displayedPixKey = document.getElementById("displayedPixKey");
-const copyPixKeyButton = document.getElementById("copyPixKey");
-const floatingPixButton = document.getElementById("floatingPixButton");
-
-const yourPixKey = "ivannatech@gmail.com"; // <-- Substitua pela sua chave Pix real
-
-// Evento para o link "cafezinho" no footer
-if (pixDonationLink) {
-  pixDonationLink.addEventListener("click", (event) => {
-    event.preventDefault();
-    displayedPixKey.textContent = yourPixKey;
-    pixModal.style.display = "flex"; // Exibe o modal
-  });
-}
-
-// Evento para o NOVO botão flutuante
-if (floatingPixButton) {
-  // <--- Novo
-  floatingPixButton.addEventListener("click", () => {
-    // <--- Novo
-    displayedPixKey.textContent = yourPixKey; // Garante que a chave correta seja exibida
-    pixModal.style.display = "flex"; // Exibe o modal
-  });
-}
-
-if (closeButton) {
-  closeButton.addEventListener("click", () => {
-    pixModal.style.display = "none"; // Esconde o modal ao clicar no 'x'
-  });
-}
-
-// Fecha o modal se clicar fora do conteúdo do modal
-window.addEventListener("click", (event) => {
-  if (event.target === pixModal) {
-    pixModal.style.display = "none";
+  // Evento para o NOVO botão flutuante
+  if (floatingPixButton) {
+    floatingPixButton.addEventListener("click", () => {
+      console.log("Clicou no botão flutuante do Pix.");
+      displayedPixKey.textContent = yourPixKey;
+      pixModal.style.display = "flex"; // Exibe o modal
+      // NENHUM localStorage.setItem("hasSeenPixModal", "true") AQUI. Isso é bom.
+    });
   }
-});
 
-if (copyPixKeyButton) {
-  copyPixKeyButton.addEventListener("click", () => {
-    navigator.clipboard
-      .writeText(yourPixKey)
-      .then(() => {
-        alert("Chave Pix copiada para a área de transferência!");
-      })
-      .catch((err) => {
-        console.error("Erro ao copiar a chave Pix:", err);
-        alert(
-          "Não foi possível copiar a chave Pix automaticamente. Por favor, copie manualmente: " +
-            yourPixKey
-        );
-      });
+  if (closeButton) {
+    closeButton.addEventListener("click", () => {
+      console.log("Clicou no botão de fechar modal.");
+      pixModal.style.display = "none"; // Esconde o modal ao clicar no 'x'
+      // NENHUM localStorage.setItem("hasSeenPixModal", "true") AQUI. Isso é bom.
+    });
+  }
+
+  // Fecha o modal se clicar fora do conteúdo do modal
+  window.addEventListener("click", (event) => {
+    if (event.target === pixModal) {
+      console.log("Clicou fora do modal.");
+      pixModal.style.display = "none";
+      // NENHUM localStorage.setItem("hasSeenPixModal", "true") AQUI. Isso é bom.
+    }
   });
-}
+
+  if (copyPixKeyButton) {
+    copyPixKeyButton.addEventListener("click", () => {
+      navigator.clipboard
+        .writeText(yourPixKey)
+        .then(() => {
+          alert("Chave Pix copiada para a área de transferência!");
+        })
+        .catch((err) => {
+          console.error("Erro ao copiar a chave Pix:", err);
+          alert(
+            "Não foi possível copiar a chave Pix automaticamente. Por favor, copie manualmente: " +
+              yourPixKey
+          );
+        });
+    });
+  }
+  // --- FIM DA LÓGICA DO MODAL PIX ---
+}); // Fim do document.addEventListener("DOMContentLoaded") principal

@@ -479,7 +479,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Event listener para o botão de voltar (mantido)
   backToMainButton.addEventListener("click", () => {
-    window.location.href = "/screens/principal.html";
+    window.location.href = "/jogo_corrida_dos_ratos_v2_publica/screens/principal.html";
   });
 
   // --- Inicialização ---

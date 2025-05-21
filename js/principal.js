@@ -759,57 +759,74 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const pixDonationLink = document.getElementById('pixDonationLink');
-    const yourPixKey = "ivannatech@gmail.com"; // <-- Substitua pela sua chave Pix real
+document.addEventListener("DOMContentLoaded", () => {
+  const pixDonationLink = document.getElementById("pixDonationLink");
+  const yourPixKey = "ivannatech@gmail.com"; // <-- Substitua pela sua chave Pix real
 
-    if (pixDonationLink) {
-        pixDonationLink.addEventListener('click', (event) => {
-            event.preventDefault(); // Impede o link de navegar para outra página
-            alert(`Fico feliz que tenha gostado e queira me ajudar! \n\n Minha chave Pix é: ivannatech@gmail.com\n\nCopie e cole para fazer a doação.`);
-        });
-    }
+  if (pixDonationLink) {
+    pixDonationLink.addEventListener("click", (event) => {
+      event.preventDefault(); // Impede o link de navegar para outra página
+      alert(
+        `Fico feliz que tenha gostado e queira me ajudar! \n\n Minha chave Pix é: ivannatech@gmail.com\n\nCopie e cole para fazer a doação.`
+      );
+    });
+  }
 });
 
+const pixDonationLink = document.getElementById("pixDonationLink");
+const pixModal = document.getElementById("pixModal");
+const closeButton = document.querySelector(".close-button");
+const displayedPixKey = document.getElementById("displayedPixKey");
+const copyPixKeyButton = document.getElementById("copyPixKey");
+const floatingPixButton = document.getElementById("floatingPixButton");
 
-const pixDonationLink = document.getElementById('pixDonationLink');
-    const pixModal = document.getElementById('pixModal');
-    const closeButton = document.querySelector('.close-button');
-    const displayedPixKey = document.getElementById('displayedPixKey');
-    const copyPixKeyButton = document.getElementById('copyPixKey');
+const yourPixKey = "ivannatech@gmail.com"; // <-- Substitua pela sua chave Pix real
 
-    const yourPixKey = "ivannatech@gmail.com"; // <-- Substitua pela sua chave Pix real
+// Evento para o link "cafezinho" no footer
+if (pixDonationLink) {
+  pixDonationLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    displayedPixKey.textContent = yourPixKey;
+    pixModal.style.display = "flex"; // Exibe o modal
+  });
+}
 
-    if (pixDonationLink) {
-        pixDonationLink.addEventListener('click', (event) => {
-            event.preventDefault();
-            displayedPixKey.textContent = yourPixKey; // Garante que a chave correta seja exibida
-            pixModal.style.display = 'flex'; // Exibe o modal
-        });
-    }
+// Evento para o NOVO botão flutuante
+if (floatingPixButton) {
+  // <--- Novo
+  floatingPixButton.addEventListener("click", () => {
+    // <--- Novo
+    displayedPixKey.textContent = yourPixKey; // Garante que a chave correta seja exibida
+    pixModal.style.display = "flex"; // Exibe o modal
+  });
+}
 
-    if (closeButton) {
-        closeButton.addEventListener('click', () => {
-            pixModal.style.display = 'none'; // Esconde o modal ao clicar no 'x'
-        });
-    }
+if (closeButton) {
+  closeButton.addEventListener("click", () => {
+    pixModal.style.display = "none"; // Esconde o modal ao clicar no 'x'
+  });
+}
 
-    // Fecha o modal se clicar fora do conteúdo do modal
-    window.addEventListener('click', (event) => {
-        if (event.target === pixModal) {
-            pixModal.style.display = 'none';
-        }
-    });
+// Fecha o modal se clicar fora do conteúdo do modal
+window.addEventListener("click", (event) => {
+  if (event.target === pixModal) {
+    pixModal.style.display = "none";
+  }
+});
 
-    if (copyPixKeyButton) {
-        copyPixKeyButton.addEventListener('click', () => {
-            navigator.clipboard.writeText(yourPixKey)
-                .then(() => {
-                    alert('Chave Pix copiada para a área de transferência!');
-                })
-                .catch(err => {
-                    console.error('Erro ao copiar a chave Pix:', err);
-                    alert('Não foi possível copiar a chave Pix automaticamente. Por favor, copie manualmente: ' + yourPixKey);
-                });
-        });
-    }
+if (copyPixKeyButton) {
+  copyPixKeyButton.addEventListener("click", () => {
+    navigator.clipboard
+      .writeText(yourPixKey)
+      .then(() => {
+        alert("Chave Pix copiada para a área de transferência!");
+      })
+      .catch((err) => {
+        console.error("Erro ao copiar a chave Pix:", err);
+        alert(
+          "Não foi possível copiar a chave Pix automaticamente. Por favor, copie manualmente: " +
+            yourPixKey
+        );
+      });
+  });
+}

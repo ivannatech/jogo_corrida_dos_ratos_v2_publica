@@ -355,3 +355,35 @@ footer {
 #pixDonationLink:hover {
   color: #e69138;
 }
+
+---
+/* Estilos para o Botão Flutuante Pix */
+#floatingPixButton {
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 20px; /* Distância do fundo da tela */
+    right: 20px; /* Distância da direita da tela */
+    background-color: #00ff4c; /* Cor de destaque (amarelo ouro, pode mudar) */
+    color: #333; /* Cor do texto/emoji */
+    border-radius: 50%; /* Torna o botão redondo */
+    width: 50px; /* Largura do botão */
+    height: 50px; /* Altura do botão */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em; /* Tamanho do emoji/texto */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
+    cursor: pointer; /* Indica que é clicável */
+    z-index: 100; /* Garante que fique acima de outros elementos */
+    transition: background-color 0.3s ease; /* Transição suave na cor */
+}
+
+#floatingPixButton:hover {
+    background-color: #333; /* Cor um pouco mais escura ao passar o mouse */
+    cursor: pointer;
+}
+
+/* Garante que o modal fique acima do botão flutuante */
+.modal {
+    z-index: 101; /* Um z-index maior que o do botão flutuante */
+}
+

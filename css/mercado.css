@@ -2,95 +2,111 @@
 
 /* --- Estilos Globais para Responsividade (adicionados) --- */
 body {
-    font-family: Arial, sans-serif; /* Mantendo a fonte original */
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4; /* Cor original */
-    color: #333; /* Cor original */
-    line-height: 1.6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    box-sizing: border-box;
+  font-family: Arial, sans-serif; /* Mantendo a fonte original */
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; /* Cor original */
+  color: #333; /* Cor original */
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
 }
 
 .container {
-    background-color: #333; /* Cor original */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 90%; /* Largura relativa */
-    max-width: 900px; /* Max-width para a tela de mercado */
-    margin: 20px auto;
-    box-sizing: border-box;
-    text-align: center;
+  background-color: #333; /* Cor original */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Largura relativa */
+  max-width: 900px; /* Max-width para a tela de mercado */
+  margin: 20px auto;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-h1, h2, h3 {
-    color: #eee; /* Cor original */
-    text-align: center;
-    margin-bottom: 20px;
+h1,
+h2,
+h3 {
+  color: #eee; /* Cor original */
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    display: block; /* Permite rolagem horizontal em telas pequenas */
-    overflow-x: auto; /* Rolagem horizontal para tabelas */
-    white-space: nowrap; /* Evita que o texto quebre dentro das células */
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  display: block; /* Permite rolagem horizontal em telas pequenas */
+  overflow-x: auto; /* Rolagem horizontal para tabelas */
+  white-space: nowrap; /* Evita que o texto quebre dentro das células */
 }
 
 table thead {
-    background-color: #eee; /* Cor ajustada para o tema claro */
-    color: #333;
+  background-color: #eee; /* Cor ajustada para o tema claro */
+  color: #333;
 }
 
-table th, table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-    white-space: normal; /* Permite que o texto volte a quebrar dentro da célula para melhor legibilidade */
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  white-space: normal; /* Permite que o texto volte a quebrar dentro da célula para melhor legibilidade */
 }
 
 /* --- Media Queries Gerais (adicionadas) --- */
 @media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
-    h1 { font-size: 1.8em; }
-    h2 { font-size: 1.5em; }
-    h3 { font-size: 1.2em; }
+  .container {
+    padding: 15px;
+  }
+  h1 {
+    font-size: 1.8em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  h3 {
+    font-size: 1.2em;
+  }
 }
 
 @media (max-width: 480px) {
-    body {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .container {
-        width: 98%;
-        padding: 10px;
-        margin: 5px auto;
-        border-radius: 0;
-    }
-    h1 { font-size: 1.5em; }
-    h2 { font-size: 1.3em; }
-    h3 { font-size: 1.1em; }
-    table th, table td {
-        padding: 6px;
-        font-size: 0.9em;
-    }
+  body {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .container {
+    width: 98%;
+    padding: 10px;
+    margin: 5px auto;
+    border-radius: 0;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  h2 {
+    font-size: 1.3em;
+  }
+  h3 {
+    font-size: 1.1em;
+  }
+  table th,
+  table td {
+    padding: 6px;
+    font-size: 0.9em;
+  }
 }
 
 /* --- Estilos Específicos do Mercado (mantidos e ajustados para responsividade) --- */
 
 #marketOptions {
-    margin-top: 20px;
-    text-align: left;
+  margin-top: 20px;
+  text-align: left;
 }
 
 /* Estilos para as seções de ativos/passivos */
@@ -98,84 +114,130 @@ table th, table td {
 #playerAssetsForSale, /* Se você tiver assets para venda do jogador */
 #availableLiabilitiesToContract,
 #playerLiabilitiesToPayOff {
-    margin-bottom: 20px; /* Reduzido ligeiramente */
-    padding: 15px;
-    border: 1px solid #ddd; /* Cor original */
-    border-radius: 5px; /* Cor original */
-    background-color: #f9f9f9; /* Cor original */
+  margin-bottom: 20px; /* Reduzido ligeiramente */
+  padding: 15px;
+  border: 1px solid #ddd; /* Cor original */
+  border-radius: 5px; /* Cor original */
+  background-color: #f9f9f9; /* Cor original */
 }
 
 #availableAssets h3,
 #playerAssetsForSale h3,
 #availableLiabilitiesToContract h3,
 #playerLiabilitiesToPayOff h3 {
-    margin-top: 0;
-    color: #333; /* Cor original */
-    text-align: left;
+  margin-top: 0;
+  color: #333; /* Cor original */
+  text-align: left;
 }
 
 /* Botões de ação dentro das tabelas */
-.buy-button, .sell-button, .contract-button, .payoff-button {
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: background-color 0.3s ease;
-    margin: 2px;
+.buy-button,
+.sell-button,
+.contract-button,
+.payoff-button {
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+  margin: 2px;
 }
 
-.buy-button { background-color: #28a745; color: #333;} /* Verde como no original para comprar */
-.sell-button { background-color: #dc3545; color: #333;} /* Vermelho como no original para vender */
-.contract-button { background-color: #28a745; color: #333;} /* Verde como no original para contratar passivo */
-.payoff-button { background-color: #f9a825; color: #333;} /* Amarelo para quitar */
+.buy-button {
+  background-color: #28a745;
+  color: #333;
+} /* Verde como no original para comprar */
+.sell-button {
+  background-color: #dc3545;
+  color: #333;
+} /* Vermelho como no original para vender */
+.contract-button {
+  background-color: #28a745;
+  color: #333;
+} /* Verde como no original para contratar passivo */
+.payoff-button {
+  background-color: #f9a825;
+  color: #333;
+} /* Amarelo para quitar */
 
-.buy-button:hover { background-color: #218838; color: #eee;}
-.sell-button:hover { background-color: #c82333; color: #eee;}
-.contract-button:hover { background-color: #218838; color: #eee;}
-.payoff-button:hover { background-color: #218838;  color: #eee;}
-
+.buy-button:hover {
+  background-color: #218838;
+  color: #eee;
+}
+.sell-button:hover {
+  background-color: #c82333;
+  color: #eee;
+}
+.contract-button:hover {
+  background-color: #218838;
+  color: #eee;
+}
+.payoff-button:hover {
+  background-color: #218838;
+  color: #eee;
+}
 
 #backToMainButton {
-    background-color: #f9a825; 
-    color: #333;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-    width: 100%; /* Ocupa a largura total */
-    max-width: 200px; /* Limita a largura em telas grandes */
-    margin: 20px auto;
-    display: block;
+  background-color: #f9a825;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Ocupa a largura total */
+  max-width: 200px; /* Limita a largura em telas grandes */
+  margin: 20px auto;
+  display: block;
 }
 
 #backToMainButton:hover {
-    background-color: #e69138;
-    color: #eee;
-
+  background-color: #e69138;
+  color: #eee;
 }
 
 /* Media Queries para mercado.html */
 @media (max-width: 768px) {
-    #availableAssets,
-    #playerAssetsForSale,
-    #availableLiabilitiesToContract,
-    #playerLiabilitiesToPayOff {
-        padding: 10px;
-    }
+  #availableAssets,
+  #playerAssetsForSale,
+  #availableLiabilitiesToContract,
+  #playerLiabilitiesToPayOff {
+    padding: 10px;
+  }
 }
 
 @media (max-width: 480px) {
-    .buy-button, .sell-button, .contract-button, .payoff-button {
-        padding: 6px 8px;
-        font-size: 0.8em;
-    }
-    #backToMainButton {
-        padding: 8px 15px;
-        font-size: 0.9em;
-    }
+  .buy-button,
+  .sell-button,
+  .contract-button,
+  .payoff-button {
+    padding: 6px 8px;
+    font-size: 0.8em;
+  }
+  #backToMainButton {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+}
+
+.asset-info {
+  padding: 6px 8px;
+}
+
+.asset-item {
+  margin-top: 10px;
+  border: 1px solid #666;
+  border-radius: 8px;
+  padding: 6px 8px;
+}
+
+.liability-item {
+  margin-top: 10px;
+  border: 1px solid #666;
+  border-radius: 8px;
+  padding: 6px 8px;
 }

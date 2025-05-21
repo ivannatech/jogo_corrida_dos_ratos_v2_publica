@@ -1,62 +1,162 @@
+/* Seu css/index.css */
+
+/* --- Estilos Globais para Responsividade (adicionados) --- */
 body {
     font-family: sans-serif;
-    background-color: #333;
-    color: #eee;
+    margin: 0;
+    padding: 0;
+    background-color: #333; /* Cor original */
+    color: #eee; /* Cor original */
+    line-height: 1.6;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
 }
 
 .container {
-    background-color: #444;
+    background-color: #444; /* Cor original */
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
+    width: 90%; /* Largura relativa */
+    max-width: 500px; /* Max-width para a tela inicial */
+    margin: 20px auto;
+    box-sizing: border-box;
 }
 
-h1 {
-    margin-bottom: 30px;
-}
-
-.player-selection {
+h1, h2, h3 {
+    color: #eee; /* Cor original */
+    text-align: center;
     margin-bottom: 20px;
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+table thead {
+    background-color: #555;
+    color: #eee;
+}
+
+table th, table td {
+    border: 1px solid #666;
+    padding: 8px;
+    text-align: left;
+    white-space: normal;
+}
+
+/* --- Media Queries Gerais (adicionadas) --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.5em; }
+    h3 { font-size: 1.2em; }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .container {
+        width: 98%;
+        padding: 20px;
+        margin: 5px auto;
+        border-radius: 0;
+    }
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.1em; }
+    table th, table td {
+        padding: 6px;
+        font-size: 0.9em;
+    }
+}
+
+/* --- Estilos Específicos do Index (mantidos e ajustados para responsividade) --- */
+
+.player-selection {
+    display: flex; /* Usa flexbox para as opções de jogador */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    gap: 20px; /* Espaçamento entre os itens */
+    justify-content: center; /* Centraliza os itens */
+    margin-bottom: 30px;
+}
+
 .player-option {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+    flex: 1 1 250px; /* flex-grow, flex-shrink, flex-basis. Tenta ocupar 250px */
+    background-color: #444; /* Mantendo a cor original do container principal, ou ajuste se houver uma cor específica para 'player-option' */
+    padding: 15px; /* Ajuste para melhor visual em responsividade */
+    border-radius: 5px;
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura */
 }
 
 .player-option label {
-    margin-right: 10px;
-    width: 80px;
-    text-align: left;
+    display: block; /* Faz a label ocupar a linha inteira */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #eee; /* Cor original */
 }
 
 .player-option input[type="text"] {
+    width: calc(100% - 16px); /* 100% menos padding e bordas */
     padding: 8px;
     border: none;
     border-radius: 4px;
-    background-color: #555;
-    color: #eee;
-    flex-grow: 1;
+    background-color: #555; /* Cor original */
+    color: #eee; /* Cor original */
+    font-size: 1em;
+    box-sizing: border-box; /* FUNDAMENTAL para o width */
 }
 
-button {
-    padding: 12px 24px;
+#startGameButton {
     background-color: #f9a825;
-    color: #333;
+    color: 333;
+    padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 1em;
     cursor: pointer;
-    font-size: 16px;
     transition: background-color 0.3s ease;
+    width: 100%; /* Ocupa a largura total */
+    max-width: 200px; /* Limita a largura em telas grandes */
+    margin-top: 20px;
 }
 
-button:hover {
+#startGameButton:hover {
     background-color: #e69138;
+}
+
+/* Media Queries para index.html */
+@media (max-width: 600px) {
+    .player-selection {
+        flex-direction: column; /* Empilha as opções de jogador */
+        align-items: center; /* Centraliza quando empilhado */
+    }
+    .player-option {
+        width: 100%; /* Ocupa a largura total disponível */
+        max-width: 300px; /* Um max-width para não ficar muito largo em telas médias */
+        padding: 10px; /* Reduz o padding */
+    }
+    .player-option input[type="text"] {
+        padding: 6px;
+        font-size: 0.9em;
+    }
+    #startGameButton {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
 }

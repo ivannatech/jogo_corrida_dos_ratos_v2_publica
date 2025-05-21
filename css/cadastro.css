@@ -1,26 +1,93 @@
+/* css/cadastro.css */
+
+/* --- Estilos Globais para Responsividade (adicionados) --- */
 body {
-    font-family: sans-serif;
-    background-color: #333;
-    color: #eee;
+    font-family: sans-serif; /* Mantendo a fonte original */
+    margin: 0;
+    padding: 0;
+    background-color: #333; /* Cor original */
+    color: #eee; /* Cor original */
+    line-height: 1.6;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: 0;
+    padding-top: 20px; /* Adicionado para espaçamento em telas menores */
+    padding-bottom: 20px; /* Adicionado para espaçamento em telas menores */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura/altura */
 }
 
 .container {
-    background-color: #444;
+    background-color: #444; /* Cor original */
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 400px; /* Largura para o formulário não ficar muito extenso */
+    width: 90%; /* Largura relativa para responsividade */
+    max-width: 400px; /* Largura máxima original */
+    margin: 20px auto; /* Centraliza e adiciona margem */
+    box-sizing: border-box;
 }
 
-h1 {
-    margin-bottom: 30px;
+h1, h2, h3 {
+    color: #eee; /* Cor original */
+    text-align: center;
+    margin-bottom: 20px;
 }
+
+/* Tabelas: Importante para responsividade (caso haja alguma, mesmo que não diretamente neste HTML) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    display: block; /* Permite rolagem horizontal em telas pequenas */
+    overflow-x: auto; /* Rolagem horizontal para tabelas */
+    white-space: nowrap; /* Evita que o texto quebre dentro das células */
+}
+
+table thead {
+    background-color: #555; /* Cor ajustada para o tema escuro */
+    color: #eee;
+}
+
+table th, table td {
+    border: 1px solid #666; /* Borda ajustada para o tema escuro */
+    padding: 8px;
+    text-align: left;
+    white-space: normal; /* Permite que o texto volte a quebrar dentro da célula para melhor legibilidade */
+}
+
+/* --- Media Queries Gerais (adicionadas) --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px; /* Reduz o padding para tablets */
+    }
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.5em; }
+    h3 { font-size: 1.2em; }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .container {
+        width: 98%; /* Quase largura total em celulares */
+        padding: 20px; /* Reduz mais o padding */
+        margin: 5px auto;
+        border-radius: 0; /* Opcional: remover borda arredondada em telas muito pequenas */
+    }
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.1em; }
+    table th, table td {
+        padding: 6px;
+        font-size: 0.9em;
+    }
+}
+
+/* --- Estilos Específicos do Cadastro (mantidos e ajustados para responsividade) --- */
 
 .form-group {
     margin-bottom: 20px;
@@ -31,32 +98,51 @@ h1 {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: #eee; /* Mantém a cor original */
 }
 
 .form-group input[type="text"],
 .form-group input[type="number"],
 .form-group select {
-    width: calc(100% - 12px); /* Ajuste para o padding */
+    width: calc(100% - 16px); /* 100% menos o padding de 8px em cada lado */
     padding: 8px;
     border: none;
     border-radius: 4px;
-    background-color: #555;
-    color: #eee;
-    box-sizing: border-box; /* Garante que padding e border não aumentem a largura */
+    background-color: #555; /* Cor original */
+    color: #eee; /* Cor original */
+    box-sizing: border-box; /* FUNDAMENTAL para o width */
+    font-size: 1em; /* Garante tamanho de fonte consistente */
 }
 
 button[type="submit"] {
-    padding: 12px 24px;
-    background-color: #f9a825;
-    color: #333;
+    background-color: #f9a825; 
+    color: 333;
+    padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 1em;
     cursor: pointer;
-    font-size: 16px;
     transition: background-color 0.3s ease;
-    width: 100%; /* Largura total do botão */
+    width: 100%; /* Ocupa a largura total do container */
+    max-width: 200px; /* Limita a largura em telas grandes */
+    margin-top: 20px;
 }
 
 button[type="submit"]:hover {
-    background-color: #e69138;
+    background-color: #e69138; 
+    color: #eee;
+}
+
+/* Media Queries para elementos específicos (se necessário) */
+@media (max-width: 480px) {
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group select {
+        padding: 6px; /* Ajusta o padding para inputs em telas menores */
+        font-size: 0.9em;
+    }
+    button[type="submit"] {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
 }

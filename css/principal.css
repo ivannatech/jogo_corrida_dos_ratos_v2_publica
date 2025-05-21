@@ -146,8 +146,8 @@ section h2 {
   color: #eee; /* Cor original */
 }
 
-#finances{
-      grid-column: 1/3;
+#finances {
+  grid-column: 1/3;
 }
 
 #finances p {
@@ -181,13 +181,13 @@ section h2 {
   color: #eee; /* Cor original */
 }
 
-#actions{
-      grid-column: 1/3;
+#actions {
+  grid-column: 1/3;
 }
 
 /* Botões de ação */
 #actions button {
-  background-color: #f9a825; 
+  background-color: #f9a825;
   color: #333;
   padding: 12px 20px;
   border: none;
@@ -423,6 +423,7 @@ footer {
   }
   #assetsAndLiabilities {
     grid-column: auto;
+    width: 96%;
   }
   section {
     margin-bottom: 15px;
@@ -433,6 +434,12 @@ footer {
   }
   #playerInfo p {
     font-size: 1em;
+  }
+  #finances {
+    width: 93%;
+  }
+  #actions {
+    width: 93%;
   }
 }
 
@@ -462,5 +469,17 @@ footer {
   #copyPixKey {
     padding: 8px 15px;
     font-size: 0.9em;
+  }
+
+  #assetsAndLiabilities {
+    grid-column: auto;
+    width: 67%;
+  }
+
+  #finances {
+    width: 65%;
+  }
+  #actions {
+    width: 65%;
   }
 }

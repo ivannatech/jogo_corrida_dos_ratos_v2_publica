@@ -8,6 +8,8 @@ Este é um jogo web que simula a "Corrida dos Ratos", inspirado no conceito de e
 
 ![Preview do Projeto](/preview.png)
 
+Acesse para testar: [https://ivannatech.github.io/jogo_corrida_dos_ratos_v2_publica/](https://ivannatech.github.io/jogo_corrida_dos_ratos_v2_publica/)
+
 ## Funcionalidades Principais
 
 * Cadastro de jogador

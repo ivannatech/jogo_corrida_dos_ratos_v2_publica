@@ -4,6 +4,10 @@
 
 Este é um jogo web que simula a "Corrida dos Ratos", inspirado no conceito de educação financeira. O jogador escolhe um emprego, gerencia suas finanças, paga contas e realiza investimentos com o objetivo de sair da corrida e alcançar a liberdade financeira.
 
+## Preview
+
+![Preview do Projeto](/preview.png)
+
 ## Funcionalidades Principais
 
 * Cadastro de jogador
@@ -37,4 +41,4 @@ Contribuições são bem-vindas! Se você tiver ideias de melhorias ou encontrar
 
 ## Autor
 
-Seu Nome
+Ivanna Tech
